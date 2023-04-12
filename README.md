@@ -44,7 +44,7 @@ A brief description of fundamentals of data Structure with C, including syntax, 
 
 2.C Compiler
 
-3. Vs Code
+3.Vs Code
 
 ## Feedback
 
