@@ -169,6 +169,9 @@ void deleteAtPosition(int pos) {
 			temp = temp->next;
 			pos--;
 		}
+		temp->next = temp->next->next;
+		free(temp->next->prev);
+		temp->next->prev = temp;
 
 	}
 }
@@ -195,7 +198,7 @@ void main() {
 	char ch;
 	do{
 		int choice;
-		printf("1.Add Node\n2.Print Nodes\n3.count Nodes\n4.Add First Node\n5.Add Last Node\n6.Add At Position\n7.Delete First Node\n8.Delete Last Node\n");
+		printf("1.Add Node\n2.Print Nodes\n3.count Nodes\n4.Add First Node\n5.Add Last Node\n6.Add At Position\n7.Delete First Node\n8.Delete Last Node\n9.Delete Node At Position\n");
 		printf("Enter your choice : ");
 		scanf("%d",&choice);
 
@@ -237,6 +240,12 @@ void main() {
 				break;
 			case 8 :
 				deleteLastNode();
+				break;
+			case 9 :
+				int pos2;
+				printf("Enter the position : ");
+				scanf("%d",&pos2);
+				deleteAtPosition(pos2);
 				break;
 			default :
 				printf("Wrong Choice");
